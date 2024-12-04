@@ -1,38 +1,116 @@
-.App {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-container {
+  width: 90%;
+  max-width: 600px;
+}
+
+header h1 {
+  font-size: 24px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-summary {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.progress {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.progress-text {
+  font-size: 18px;
+}
+
+.progress-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #72c91e;
+}
+
+.task-input {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  background: #1e1e1e;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #72c91e;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.task-item.completed .task-content span {
+  text-decoration: line-through;
+  color: #72c91e;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.status {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background: transparent;
+  border: 2px solid #72c91e;
+  cursor: pointer;
+}
+
+.status.done {
+  background: #72c91e;
+}
+
+.task-actions button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
 }
